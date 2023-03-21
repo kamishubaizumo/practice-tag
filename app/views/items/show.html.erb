@@ -1,0 +1,11 @@
+<h1>詳細ページ</h1>
+<%= link_to "一覧ページ", items_path %><br>
+
+<%= @item.name %>
+<%= @item.item_text %><br>
+<% @item_tags.each do |tag| %>
+  <%= tag.tag_name %><br>
+<% end %>
+
+
+<%= link_to "編集", edit_item_path(@item.id) %>

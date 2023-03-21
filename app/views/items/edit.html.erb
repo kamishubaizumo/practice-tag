@@ -1,0 +1,19 @@
+<h1>編集ページ</h1>
+<%= link_to "詳細ページ", item_path(@item.id) %><br>
+
+<%= form_with model: @item do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_area :item_text %>
+
+  <%= f.text_field :tag_name %>
+  <%= f.collection :tag_name, selected: :ttag_id %>
+
+
+
+  <% @item.ttags.each do |tag| %>
+
+    <%= tag.tag_name %>
+  <% end %>
+
+
+<% end %>

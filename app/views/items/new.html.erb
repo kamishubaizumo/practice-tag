@@ -1,0 +1,18 @@
+<h1>投稿画面</h1>
+<%= link_to "一覧画面",root_path %>
+<%= form_with model: @item do |f| %>
+<p>タイトル</p>
+  <%= f.text_field :name %>
+
+<p>本文</p>
+  <%= f.text_area :item_text %>
+
+<p>タグ</p>
+ <%= f.text_field :tag_name, placeholder: "タグを複数つけるには' , 'で区切ってください" %>
+<!--タグを保存する時、保存するのは中間テーブル？？-->
+
+  <%= f.submit "投稿" %>
+<% end %>
+
+
+
