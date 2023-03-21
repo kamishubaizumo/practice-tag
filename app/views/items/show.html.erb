@@ -7,5 +7,5 @@
   <%= tag.tag_name %><br>
 <% end %>
 
-
+<%= link_to "削除", item_path(@item), method: :delete %>
 <%= link_to "編集", edit_item_path(@item.id) %>

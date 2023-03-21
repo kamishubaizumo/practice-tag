@@ -8,11 +8,19 @@
   <%= f.text_area :item_text %>
 
 <p>タグ</p>
- <%= f.text_field :tag_name, placeholder: "タグを複数つけるには' , 'で区切ってください" %>
+ <%= f.text_field :tag_name, placeholder: "タグを複数つけるには空白で区切ってください" %>
 <!--タグを保存する時、保存するのは中間テーブル？？-->
 
   <%= f.submit "投稿" %>
 <% end %>
 
+<br>
+下の一覧から、タグを押すとフォームに自動入力されるようにする。検索しても出てこない。
+サジェストとは違う。pixivのタグ付けみたいにしたい
+
+<p>タグリスト</p>
+<% @tag_list.each do |tag| %>
+  <%= tag.tag_name %>
+<% end %>
 
 

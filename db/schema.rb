@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2023_03_19_082121) do
     t.integer "ttag_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"post_id\", \"ttag_id\"", name: "index_item_tags_on_post_id_and_ttag_id", unique: true
   end
 
   create_table "items", force: :cascade do |t|

@@ -6,7 +6,6 @@
   <%= f.text_area :item_text %>
 
   <%= f.text_field :tag_name %>
-  <%= f.collection :tag_name, selected: :ttag_id %>
 
 
 
@@ -15,5 +14,5 @@
     <%= tag.tag_name %>
   <% end %>
 
-
+<%= f.submit "更新" %>
 <% end %>

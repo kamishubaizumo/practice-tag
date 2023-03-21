@@ -19,6 +19,12 @@ class TagsController < ApplicationController
   def update
   end
 
+  def destroy
+    @tag = Ttag.find(params[:id])
+    @tag.destroy
+    redirect_to items_path
+  end
+
 
   private
 
