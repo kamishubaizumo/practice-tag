@@ -13,9 +13,9 @@ class Item < ApplicationRecord
       self.item_tags.destroy_all
 
       sent_tags.each do |new|
-        # Ttag.find_or_create_by(tag_name: new)
-        # self.ttags << new_post_tag
-        self.item_tags.find_or_create_by(ttag_id: Ttag.find_or_create_by(tag_name: new).id)
+        new_post_tag = Ttag.find_or_create_by(tag_name: new)
+        self.ttags << new_post_tag
+        #self.item_tags.find_or_create_by(ttag_id: Ttag.find_or_create_by(tag_name: new).id)
       end
     end
   end

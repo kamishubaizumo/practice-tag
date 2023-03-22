@@ -5,14 +5,17 @@
   <%= f.text_field :name %>
   <%= f.text_area :item_text %>
 
-  <%= f.text_field :tag_name %>
+  <%= f.text_field :tag_name,value:@tags %>
 
 
 
-  <% @item.ttags.each do |tag| %>
 
-    <%= tag.tag_name %>
-  <% end %>
+
 
 <%= f.submit "更新" %>
+<% end %>
+
+以下のタグをクリックして、上のフォームに追加できるようにする
+<% @tag_list.each do |tag_list| %>
+  <%= tag_list.tag_name %>
 <% end %>

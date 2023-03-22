@@ -9,6 +9,7 @@
 
 <% end %>
 
+
 <% @tags.each do |tags| %>
   <%= tags.tag_name %>
   <%= link_to "x",tag_path(tags.id), method: :delete %>

@@ -25,35 +25,33 @@ class ItemsController < ApplicationController
   end
 
   def create
-   #byebug
    @item = Item.new
+
+   #@item.name(カラム)
    @item.name = params[:item][:name]
    @item.item_text = params[:item][:item_text]
-   tag_list = params[:item][:tag_name].split(nil)
+
+   #ビューから取ってきたものを拾ってきている
+   tag_list = params[:item][:tag_name].split(" ")
+
     if @item.save!
       @item.save_tag(tag_list)
       redirect_to items_path
     else
       redirect_to new_item_path
     end
-
-
   end
 
   def edit
     @item = Item.find(params[:id])
-    @tags = @item.ttags.pluck(:tag_name)
-
-
-
+    @tags = @item.ttags.pluck(:tag_name).join(" ")
     @tag_list = Ttag.all
-
 
   end
 
   def update
     @item = Item.find(params[:id])
-    tag_list = params[:item][:name].split(nil)
+    tag_list = params[:item][:tag_name].split(" ")
 
 
     if @item.update(item_params)

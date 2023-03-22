@@ -9,7 +9,7 @@ class CreateItemTags < ActiveRecord::Migration[6.1]
     end
 
         # 同じタグを２回保存するのは出来ないようになる
-    #add_index :item_tags, [:item_id, :ttag_id], unique: true
+    add_index :item_tags, [:item_id, :ttag_id], unique: true
 
   end
 end
