@@ -1,5 +1,5 @@
 <h1>投稿画面</h1>
-<%= link_to "一覧画面",root_path %>
+<%= link_to "トップ画面",root_path %> | <%= link_to "一覧画面",items_path %>
 <%= form_with model: @item do |f| %>
 <p>タイトル</p>
   <%= f.text_field :name %>
@@ -19,8 +19,6 @@
 サジェストとは違う。pixivのタグ付けみたいにしたい
 
 <p>タグリスト</p>
-<% @tag_list.each do |tag| %>
-  <%= tag.tag_name %>
-<% end %>
 
+<%= render "tags/tag_list", tag_list: @tag_list %>
 

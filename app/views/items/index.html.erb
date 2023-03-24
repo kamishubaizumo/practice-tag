@@ -6,16 +6,7 @@
 
 <h2>アイテム一覧</h2>
 
-  <% @items.each do |item| %>
-  アイテム名:  <%= link_to item_path(item.id) do %>
-      <%= item.name %>
-    <% end %>
-    <br>
-    アイテム説明:<%= item.item_text %><br>
-    
-    
 
-    タグ: <% item.ttags.each do |tag_list| %>
-      <%= tag_list.tag_name %><br>
-    <% end %>
-  <% end %>
+  <%= render "item_list", items: @items %>
+
+

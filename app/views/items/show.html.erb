@@ -1,11 +1,10 @@
 <h1>詳細ページ</h1>
 <%= link_to "一覧ページ", items_path %><br>
 
-<%= @item.name %>
-<%= @item.item_text %><br>
-<% @item_tags.each do |tag| %>
-  <%= tag.tag_name %><br>
-<% end %>
+アイテム名: <%= @item.name %><br>
+アイテム説明: <%= @item.item_text %><br>
+タグ一覧：
+<%= render "tags/tag_list", tag_list: @item_tags %>
 
 <%= link_to "削除", item_path(@item), method: :delete %>
 <%= link_to "編集", edit_item_path(@item.id) %>

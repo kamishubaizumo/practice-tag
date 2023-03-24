@@ -1,0 +1,15 @@
+<h1>タグ[<%= @tag.tag_name %>]のアイテム一覧</h1>
+
+<div>
+  <h2>タグリスト</h2>
+<%= render "tags/tag_list", tag_list: @tag_list %>
+</div>
+
+<div>
+  <h2>アイテム一覧</h2>
+
+  <%= render "item_list",items: @items %>
+
+</div>
+
+<%= link_to "トップ",root_path %>

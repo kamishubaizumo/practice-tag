@@ -1,0 +1,13 @@
+  <% items.each do |item| %>
+  アイテム名:
+    <%= link_to item_path(item.id) do %>
+      <%= item.name %>
+    <% end %>
+    <br>
+    アイテム説明:<%= item.item_text %><br>
+
+    タグ:
+
+    <%= render "tags/tag_list", tag_list: item.ttags %>
+
+  <% end %>

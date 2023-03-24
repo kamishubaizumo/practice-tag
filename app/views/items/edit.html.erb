@@ -8,14 +8,9 @@
   <%= f.text_field :tag_name,value:@tags %>
 
 
-
-
-
-
 <%= f.submit "更新" %>
 <% end %>
 
-以下のタグをクリックして、上のフォームに追加できるようにする
-<% @tag_list.each do |tag_list| %>
-  <%= tag_list.tag_name %>
-<% end %>
+以下のタグをクリックして、上のフォームに自動追加できるようにする
+
+<%= render "tags/tag_list", tag_list: @tag_list %>

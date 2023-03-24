@@ -4,11 +4,7 @@ class TagsController < ApplicationController
     @tag = Ttag.new
   end
 
-  def show
-  end
-
   def create
-
    #一度に複数を登録する
    tags = tag_params[:tag_name].split(" ")
 
@@ -21,15 +17,9 @@ class TagsController < ApplicationController
       Ttag.find_or_create_by(tag_name: tag)
     end
    redirect_to tags_path
-
-
   end
 
-  def edit
-  end
 
-  def update
-  end
 
   def destroy
     @tag = Ttag.find(params[:id])

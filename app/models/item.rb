@@ -8,22 +8,21 @@ class Item < ApplicationRecord
 
 
   #編集するとき、タグの入れ替えをする。
-  def save_tag(sent_tags)
-    unless sent_tags.empty?
-      self.item_tags.destroy_all
+    def save_tag(sent_tags)
+      unless sent_tags.empty?
+        self.item_tags.destroy_all
 
-      sent_tags.each do |new|
-        new_post_tag = Ttag.find_or_create_by(tag_name: new)
-        self.ttags << new_post_tag
-        #self.item_tags.find_or_create_by(ttag_id: Ttag.find_or_create_by(tag_name: new).id)
+        sent_tags.each do |new|
+          
+          #find_or_create_by 同じ値が存在している場合、既存の値を返す
+          #存在しない場合、新しく作成される
+          new_post_tag = Ttag.find_or_create_by(tag_name: new)
+          
+          #<<演算子
+          self.ttags << new_post_tag
+        end
       end
     end
-  end
-
-
-
-
-
 
 
 
